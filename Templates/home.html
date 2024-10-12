@@ -1,0 +1,125 @@
+{% include 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid mb-5">
+    <!-- 1st row -->
+    <div class="row d-flex align-items-center justify-content-evenly mx-2 my-2">
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'Images/banner1.jpeg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Notes</h5>
+                  <p class="card-text">A note tab is a feature in StudySphere that allows users to create, organize, and manage notes efficiently.</p>
+                  <a href="{% url 'notes' %}" class="btn btn-primary w-100">Add Notes</a>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'Images/banner1.jpeg' %}"  class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Assignments</h5>
+                  <p class="card-text">Enhance learning, encourage critical thinking, and provide opportunities for practice and application of knowledge</p>
+                  <a href="{% url 'assignments' %}" class="btn btn-primary w-100">Check Assignments</a>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'Images/banner1.jpeg' %}"  class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Youtube</h5>
+                  <p class="card-text">A video-sharing platform where you can upload, view, and share videos.</p>
+                  <a href="{% url 'youtube' %}" class="btn btn-primary w-100">Search Videos</a>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'Images/banner1.jpeg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">To-Do Task</h5>
+                  <p class="card-text">Tasks that need to be completed, often listed for better organization and time management.</p>
+                  <a href="{% url 'todo' %}" class="btn btn-primary w-100">Create Tasks</a>
+                </div>
+              </div>
+        </div>
+    </div>
+    <!-- 2nd row -->
+    <div class="row d-flex align-items-center justify-content-evenly mx-2 my-2">
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'Images/banner2.jpeg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Search Books</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="{% url 'searchbooks' %}" class="btn btn-primary w-100">Find Your Books</a>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'Images/banner2.jpeg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Dictionary</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="{% url 'dictionary' %}" class="btn btn-primary w-100">Search Words</a>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'Images/banner2.jpeg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Wikipedia</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="{% url 'wikipedia' %}" class="btn btn-primary w-100">Do Research</a>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'Images/banner2.jpeg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Calculator</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="{% url 'calculator' %}" class="btn btn-primary w-100">Perform Calculation</a>
+                </div>
+              </div>
+        </div>
+    </div>
+    <!-- 3rd row -->
+    <div class="row d-flex align-items-center justify-content-evenly mx-2 my-2">
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'Images/banner1.jpeg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Conversion</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="{% url 'conversion' %}" class="btn btn-primary w-100">Find Conversion</a>
+                </div>
+              </div>
+        </div>
+        <!-- <div class="col-md-6">
+            <div class="card" style="width: 41rem;">
+                <img src="{% static 'Images/banner2.jpeg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div> -->
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'Images/banner1.jpeg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Search Map</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="{% url 'map' %}" class="btn btn-primary w-100">Go to Map</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
