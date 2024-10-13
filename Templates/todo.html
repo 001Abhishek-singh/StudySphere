@@ -1,1 +1,20 @@
-<h1>Todo</h1>
+{% include 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'CSS/todo.css' %}">
+<div class="container">
+    <div class="todo-app">
+        <h2>TO-DO List <img src="{% static 'Images/images.png'%}" alt="todo logo"></h2>
+        <div class="AddTask">
+            <input type="text" id="text-box" placeholder="Add your task">
+            <button id="text-button" onclick="addtask()">Add</button>
+        </div>
+        <ul id="list-container">
+            <!-- <li class="checked">Task 1</li>
+            <li>Task 2</li>
+            <li class="checked">Task 3</li> -->
+        </ul>
+    </div>
+</div>
+<script src="{% static 'JS/todo.js' %}"></script>
+{% endblock %}
