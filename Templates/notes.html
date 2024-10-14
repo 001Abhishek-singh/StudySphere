@@ -1,5 +1,45 @@
 {% include 'base.html' %}
 {% load static %}
 {% block content %}
-<h1>notes</h1>
+<link rel="stylesheet" href="{% static 'CSS/notes.css' %}">
+<!-- card section -->
+{% for value_dic in notesObj %}
+    <div class="box">
+        <div class="element_container">
+            <p class="for_p_tag"><b>Subject:</b> <strong>{{value_dic.subject}}</strong></p>
+            <p class="for_p_tag"><b>Topic:</b> <span>{{value_dic.topic}}</span></p>
+            <p class="for_p_tag"><b>Date:</b> <span>{{value_dic.date}}</span></p>
+            <p class="for_text_area"><b>Description:</b> <span>{{value_dic.notes}}</span></p>
+            <div class="button_container">
+                <button>Update</button>
+                <button><a href="/delete/{{value_dic.id}}">Delete</a></button>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+
+<!-- form section -->
+    <form method='post' action="#">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="subject" class="form-label">Subject</label>
+            <input type="text" name="subject" class="form-control" id="subject" aria-describedby="subject">
+        </div>
+        <div class="mb-3">
+            <label for="topic" class="form-label">Topic</label>
+            <input type="text" name="topic" class="form-control" id="topic" aria-describedby="topic">
+        </div>
+        <div class="mb-3">
+            <label for="date" class="form-label">Date</label>
+            <input type="date" name="date" class="form-control" id="date" aria-describedby="date">
+        </div>
+        <div class="mb-3">
+            <label for="note" class="form-label">Description</label>
+            <textarea name="note" id="note"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+<script src="{% static 'JS/notes.js' %}"></script>
 {% endblock %}

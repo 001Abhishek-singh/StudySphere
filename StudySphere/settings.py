@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'ToDoTask',
     'Youtube',
     'Map',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -134,13 +135,14 @@ STATIC_ROOT = os.path.join(BASE_DIR,'Assets')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # for email verification
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-EMAIL_HOST_USER = '001abhishek287@gmail.com'
-EMAIL_HOST_PASSWORD = 'tuuu ytlx hvfv eozf'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_USE_TLS = True
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = '001abhishek287@gmail.com'
+# EMAIL_HOST_PASSWORD = 'tuuu ytlx hvfv eozf'
 
 # NOTE: always enable the less secure app for sending the email otherwise it will not send the email
 # Go to google account

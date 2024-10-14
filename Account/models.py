@@ -9,3 +9,7 @@ class Profile(models.Model):
     is_valid = models.BooleanField(default=False) # checking user is valid or not
     created_date = models.DateTimeField(auto_now_add=True) # adding the current date and time
 
+# this meta class use to remove extra s from the model name
+    class Meta:
+        verbose_name = 'Profile'
+        verbose_name_plural = 'Profile'

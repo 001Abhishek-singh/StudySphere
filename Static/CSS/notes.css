@@ -1,0 +1,42 @@
+.box{
+    border: 7px solid black;
+    padding: 6px;
+    margin: 4px;
+    display: inline-block;
+    border-radius: 16px;
+    width: 340px;
+}
+.element_container{
+    border-radius: 6px;
+    padding: 10px;
+}
+.for_p_tag{
+    border-bottom: 1px solid gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px;
+}
+.for_text_area{
+    text-align: justify;
+    border-bottom: 1px solid gray;
+}
+.button_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px;
+    background: lavender;
+    border-radius: 7px;
+    border: 1px solid blueviolet;
+}
+.button_container button{
+    border-radius: 6px;
+    border: 0;
+    outline: 0;
+    font-size: 18px;
+    background-color: blueviolet;
+    color: white;
+    padding: 4px 18px;
+    box-shadow: 1px 1px 8px 3px gray;
+}
