@@ -13,3 +13,14 @@ class Profile(models.Model):
     class Meta:
         verbose_name = 'Profile'
         verbose_name_plural = 'Profile'
+    
+class UserProfile(models.Model):
+    # userStudent = models.OneToOneField(User,on_delete=models.CASCADE)
+    name = models.CharField(max_length=160)
+    email = models.EmailField()
+    password = models.IntegerField()
+    confirmPassword = models.IntegerField()
+
+    class Meta:
+        verbose_name = 'UserProfile'
+        verbose_name_plural = 'UserProfile'

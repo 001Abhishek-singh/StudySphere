@@ -1,0 +1,51 @@
+
+.container{
+    background: linear-gradient(rgba(99, 43, 187,0.4), rgba(88, 124, 124,0.5));
+    width: 50%;
+    border: 2px solid black;
+    border-radius: 6px;
+    text-align: center;
+    padding: 0 0 16px 0;
+}
+.header{
+    font-size: 28px;
+    font-style: italic;
+    margin: 15px 0;
+}
+.conversion-div-1{
+    width: 100%;
+}
+.conversion-div-1 select{
+    padding: 7px;
+}
+.conversion-div-1 input{
+    border: 0;
+    border-radius: 0;
+    background: linear-gradient(rgba(89, 93, 185,0.7), rgba(99, 54, 165,0.7));
+    font-size: 22px;
+    color: white;
+    outline: 0;
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 7px;
+}
+.conversion-div-2 select{
+    padding: 7px;
+}
+.conversion-div-2 input{
+    border: 0;
+    border-radius: 0;
+    background: linear-gradient(rgba(89, 93, 185,0.7), rgba(99, 54, 165,0.7));
+    font-size: 22px;
+    color: white;
+    outline: 0;
+    text-align: center;
+    margin-top: 15px;
+    padding: 7px;
+}
+.exchange-rate{
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    margin-top:20px;
+}

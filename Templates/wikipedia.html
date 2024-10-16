@@ -2,4 +2,24 @@
 {% load static %}
 {% block content %}
 <h1>wikipedia</h1>
+<div class="wikipedia_container">
+    <form action="#" method="POST">
+        {% csrf_token %}
+        <label for="wikipedia_content">Enter your Text</label>
+        <input type="text" name="wikipedia" id="wikipedia_content">
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+<hr>
+<div class="search_list">
+   
+<div>
+    <p>{{title}}</p>
+    <p>{{link}}</p>
+    <p>{{details}}</p>
+    <p>{{content}}</p>
+</div>
+   
+</div>
 {% endblock %}

@@ -1,13 +1,13 @@
 # import uuid
 from django.shortcuts import render,redirect
 # from django.http import HttpResponse
-# from django.contrib.auth.models import User
-# from django.contrib import messages
-# from .models import Profile
+from django.contrib.auth.models import User
+from django.contrib import messages
+from .models import Profile
 # from django.conf import settings
 # from django.core.mail import send_mail
 # from django.core.mail import EmailMessage
-# from django.contrib.auth import authenticate,login
+from django.contrib.auth import authenticate,login
 # from django.contrib.auth.decorators import login_required
 
 def loginAccount(request):
@@ -28,37 +28,32 @@ def home(request):
 # # def index(request):
 # #     return render(request,'index.html',{})
 
-# def registerAccount(request):
-#     if request.method == 'POST':
-#         firstname = request.POST.get('username')
-#         email = request.POST.get('email')
-#         password = request.POST.get('password')
-#         confirm_password = request.POST.get('confirm_password')
-#         print(firstname, email, password,confirm_password)
-#         print(str(uuid.uuid4()))
-
-#     try:
+def registerAccount(request):
+    if request.method == 'POST':
+        firstname = request.POST.get('username')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        confirm_password = request.POST.get('confirm_password')
+        print(firstname, email, password,confirm_password)
+    try:
             
-#         if User.objects.filter(username=firstname).exists():
-#             messages.info(request, "User is already created")
-#             return redirect('/loginAccount/')
+        if User.objects.filter(username=firstname).exists():
+            messages.info(request, "User is already created")
+            return redirect('/loginAccount/')
         
-#         if User.objects.filter(email = email).exists():
-#             messages.info(request, "Email is already taken")
-#             return redirect('/loginAccount/')
+        if User.objects.filter(email = email).exists():
+            messages.info(request, "Email is already taken")
+            return redirect('/loginAccount/')
         
-#         else:
-#             user_obj = User.objects.create_user(username=firstname, email=email, password = password)
-#             user_obj.save()
-#             auth_token = str(uuid.uuid4())
-#             user_profile_obj = Profile(user=user_obj, auth_token=auth_token)
-#             user_profile_obj.save()
-#             mail_send(email, auth_token)
-#         return redirect('/checkemail/')
+        else:
+            user_obj = User.objects.create_user(username=firstname, email=email, password = password)
+            user_obj.save()
+            user_profile_obj = Profile(user=user_obj)
+            user_profile_obj.save()
 
-#     except Exception as e:
-#         print(e)
-#     return render(request,'index.html',{})
+    except Exception as e:
+        print(e)
+    return render(request,'index.html',{})
 
 # @login_required(login_url='/')
 # def loginAccount(request):

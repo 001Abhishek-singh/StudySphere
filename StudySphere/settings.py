@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'ToDoTask',
     'Youtube',
     'Map',
+    'Wikipedia',
     'crispy_forms',
 ]
 
