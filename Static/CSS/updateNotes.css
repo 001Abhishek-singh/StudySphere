@@ -1,0 +1,30 @@
+.form_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 50%; */
+    margin: 10px 30px 30px 30px;
+    padding: 20px;
+    /* border: 2px solid black; */
+}
+.notes_form{
+    border: 1px solid darkgreen;
+    width: 30%;
+    padding: 14px;
+    border-radius: 20px;
+}
+.textArea{
+    width: 100%;
+    outline: 0;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+.buttonStyle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buttonStyle button{
+    width: 50%;
+    font-size: 20px;
+}

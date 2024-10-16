@@ -1,5 +1,38 @@
 {% include 'base.html' %}
 {% load static %}
 {% block content %}
-<h1>dictionary</h1>
+<div class="dictionary_container">
+    <form action="#" method="POST">
+        {% csrf_token %}
+        <label for="dictionary_content">Enter your Text</label>
+        <input type="text" name="dictionary" id="dictionary_content">
+        <button type="submit">Search</button>
+    </form>
+</div>
+<!-- to display on the webpage -->
+<div class="search_list">
+    {% if inputword %}
+    <div class="list_container">
+        <div>
+            <p class="title">{{inputword}}</p>
+            <p class="channel">{{phonetics}}</p>
+            <audio src="{{audio}}" id="player"></audio>
+            <div>
+                <a onclick="document.getElementById('player').play()"><img src="{% static 'Image/banner1.jpeg' %}" width="40px" height="40px" alt="#"></a>
+            </div>
+            <p class="definition">{{definition}}</p> 
+            <p class="examples">{{example}} </p>
+            <p>
+                {% for synonym in synonyms %}
+                <span class="published">{{synonym}}</span>
+                {% endfor %}
+                <hr>
+            </p>
+        </div>
+    </div>
+    {% else %}
+    <h2>Sorry, please check the spelling</h2>
+    {% endif %}
+</div>
+
 {% endblock %}

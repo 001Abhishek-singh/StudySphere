@@ -1,0 +1,29 @@
+{% include 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'CSS/assignment.css' %}">
+{% for value in Dict_obj%}
+<div class="assignment_box">
+    <div class="content_box">
+        <div class="title_assignment">
+            <h2>{{value.title}}</h2>
+            <p>{{value.description}}</p>
+            <p><span>{{value.location}}</span> <span>{{value.date}}</span></p>
+        </div>
+        <div class="intro_assignment">
+            <h3>Introduction:</h3>
+            <pre>{{value.introduction}}</pre>
+        </div>
+        <div class="main_assignment">
+            <h3>Theory:</h3>
+            <pre>{{value.content}}</pre>
+        </div>
+        <div class="conclusion_assignment">
+            <h3>Conclusion:</h3>
+            <pre>{{value.conclusion}}</pre>
+        </div>
+    </div>
+</div>
+{% endfor %}
+<script src="{% static 'JS/assignment.js' %}"></script>
+{% endblock %}

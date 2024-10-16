@@ -1,0 +1,31 @@
+{% include 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'CSS/updateNotes.css' %}">
+<!-- form section -->
+<div class="form_container">
+    <form method="POST" action="/add/updateNotes/{{updateObj.id}}" class="notes_form">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="subject" class="form-label">Subject</label>
+            <input type="text" name="subject" value="{{updateObj.subject}}" class="form-control" id="subject" aria-describedby="subject" disabled>
+        </div>
+        <div class="mb-3">
+            <label for="topic" class="form-label">Topic</label>
+            <input type="text" name="topic" class="form-control" value="{{updateObj.topic}}" id="topic" aria-describedby="topic">
+        </div>
+        <div class="mb-3">
+            <label for="date" class="form-label">Date</label>
+            <input type="date" name="date" class="form-control" value="{{updateObj.date}}" id="date" aria-describedby="date">
+        </div>
+        <div class="mb-3">
+            <label for="note" class="form-label">Description</label>
+            <textarea name="description" id="note" value="{{updateObj.description}}" class="textArea"></textarea>
+        </div>
+        <div class="buttonStyle">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+ </div>
+<script src="{% static 'JS/updateNotes.js' %}"></script>
+{% endblock %}

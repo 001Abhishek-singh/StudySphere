@@ -2,25 +2,10 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" href="{% static 'CSS/notes.css' %}">
-<!-- card section -->
-{% for value_dic in notesObj %}
-    <div class="box">
-        <div class="element_container">
-            <p class="for_p_tag"><b>Subject:</b> <strong>{{value_dic.subject}}</strong></p>
-            <p class="for_p_tag"><b>Topic:</b> <span>{{value_dic.topic}}</span></p>
-            <p class="for_p_tag"><b>Date:</b> <span>{{value_dic.date}}</span></p>
-            <p class="for_text_area"><b>Description:</b> <span>{{value_dic.notes}}</span></p>
-            <div class="button_container">
-                <button>Update</button>
-                <button><a href="/delete/{{value_dic.id}}">Delete</a></button>
-            </div>
-        </div>
-    </div>
-{% endfor %}
-
 
 <!-- form section -->
-    <form method='post' action="#">
+<div class="form_container">
+    <form method='post' action="#" class="notes_form">
         {% csrf_token %}
         <div class="mb-3">
             <label for="subject" class="form-label">Subject</label>
@@ -36,10 +21,34 @@
         </div>
         <div class="mb-3">
             <label for="note" class="form-label">Description</label>
-            <textarea name="note" id="note"></textarea>
+            <textarea name="description" id="note" class="textArea"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="buttonStyle">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
     </form>
+ </div>
+
+<!-- card section -->
+{% for value in notesdict %}
+    <div class="box">
+        <div class="element_container">
+            <p class="for_p_tag"><b>Subject:</b> <strong>{{value.subject}}</strong></p>
+            <p class="for_p_tag"><b>Topic:</b> <span>{{value.topic}}</span></p>
+            <p class="for_p_tag"><b>Date:</b> <span>{{value.date}}</span></p>
+            <p class="for_text_area"><b>Description:</b> <span>{{value.description}}</span></p>
+            <div class="button_container">
+                <button><a style="text-decoration: none; color: white" href="/add/updateNotes/{{value.id}}">Update</a></button>
+                <button><a style="text-decoration: none; color: white" href="/add/deleteNotes/{{value.id}}">Delete</a></button>
+            </div>
+            <hr>
+            <span>{{value.id}}</span>
+            <span>{{user}}</span>
+        </div>
+    </div>
+{% endfor %}
+
+
 
 <script src="{% static 'JS/notes.js' %}"></script>
 {% endblock %}

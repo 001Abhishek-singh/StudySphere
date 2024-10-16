@@ -2,4 +2,57 @@
 {% load static %}
 {% block content %}
 <h1>books</h1>
+<div class="book_container">
+    <form action="#" method="POST">
+        {% csrf_token %}
+        <label for="book_content">Enter your Text</label>
+        <input type="text" name="books" id="book_content">
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+<!-- show books -->
+<div class="search_list">
+    {% for value in results %}
+    <div class="list_container">
+        <a href="{{value.preview}}">
+        <div class="thumnail">
+            <img src="{{value.thumbnail}}" alt="">
+        </div>
+        </a>
+        <div>
+            <p class="title">{{value.title}}</p>
+            <p class="channel">{{value.subtitle}}</p>
+            {% if value.description %}
+            <p class="description">{{value.description}}</p>
+            {% endif %}
+            <p>{{value.categories}}</p>
+            <p>{{value.count}}</p>
+            <p>{{value.rating}}</p>
+            <!-- <p></p>
+            {% if value.categories %}
+            <p>
+                <p>
+                    {% for category in value.categories %}
+                        <span class="duration">{{category}}</span>
+                    {% endfor %}
+                </p>
+            </p>
+            {% endif %}
+            {% if value.count %}
+            <p>
+                <span class="views">{{value.count}}</span>
+            </p>
+            {% endif %}
+            {% if value.rating %}
+            <p>
+                <span class="published">{{value.rating}}</span>
+            </p>
+            {% endif %} -->
+            
+        </div>
+     
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}

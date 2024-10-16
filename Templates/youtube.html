@@ -2,4 +2,35 @@
 {% load static %}
 {% block content %}
 <h1>youtube</h1>
+<div class="youtube_container">
+    <form action="#" method="POST">
+        {% csrf_token %}
+        <label for="search_content">Enter your Text</label>
+        <input type="text" name="youtube" id="search_content">
+        <button type="submit">Search</button>
+    </form>
+</div>
+<br>
+<hr>
+<div class="search_list">
+    {% for value in results %}
+    <div class="list_container">
+        <a href="{{value.link}}">
+        <div class="thumnail">
+            <img src="{{value.thumbnail}}" alt="">
+        </div>
+        <div>
+            <p class="title">{{value.title}}</p>
+            <p class="channel">{{value.channel}}</p>
+            <p class="description">{{value.description}}</p>
+            <p>
+                <span class="duration">{{value.duration}}</span>
+                <span class="views">{{value.views}}</span>
+                <span class="published">{{value.published}}</span>
+            </p>
+        </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}
