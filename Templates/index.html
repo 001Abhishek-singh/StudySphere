@@ -7,14 +7,14 @@
         <div class="container" id="container">
             <!-- registration form div -->
             <div class="form-container sign-up-container">
-                <form action="#" method="POST">
+                <form action="{% url 'Registration' %}" method="POST">
                     {% csrf_token %}
 
                     <!-- message displaying -->
                     <div>
                         {% if messages %}
                             {% for message in messages %}
-                                <div style="background-color:mediumturquoise;padding:10px; color: white;">{{message}}</div>
+                                <div style="background-color:mediumturquoise;padding:10px; color: white; border-radius:4px;">{{message}}</div>
                             {% endfor %}
                         {% endif %}
                     </div>
@@ -40,7 +40,7 @@
                     <div>
                         {% if messages %}
                             {% for message in messages %}
-                                <div style="background-color:mediumturquoise;padding:10px; color: white;">{{message}}</div>
+                                <div style="background-color:mediumturquoise;padding:10px; color: white; border-radius:4px;">{{message}}</div>
                             {% endfor %}
                         {% endif %}
                     </div>

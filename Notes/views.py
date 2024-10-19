@@ -1,6 +1,7 @@
 from django.shortcuts import render,get_object_or_404,redirect
 from .models import Notes
-
+from django.contrib.auth.decorators import login_required
+@login_required(login_url='loginAccount')
 def addNotes(request):
     # getting the values from the input form
     if request.method == 'POST':

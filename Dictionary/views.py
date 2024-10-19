@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from .models import Dictionary
 import requests
+from django.contrib.auth.decorators import login_required
 # Create your views here.
+@login_required(login_url='loginAccount')
 def DictionaryWord(request):
     if request.method == 'POST':
         inputword = request.POST['dictionary']

@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .models import Assignments
+from django.contrib.auth.decorators import login_required
 # Create your views here.
+@login_required(login_url='loginAccount')
 def useAssignment(request):
     if request.method == 'POST':
         title = request.POST['title']

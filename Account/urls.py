@@ -2,7 +2,9 @@ from django.urls import path,include
 from .views import *
 urlpatterns = [
     path('',loginAccount,name='loginAccount'),
-    path('home/',home,name='home'),
+    path('register/',registrationpage,name='Registration'),
+    path('home/',Homepage,name='home'),
+    path('logout/',logoutpage,name='logout'),
     path('add/',include('Notes.urls')),
     path('add/',include('Assignments.urls')),
     path('add/',include('Books.urls')),
